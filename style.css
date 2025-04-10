@@ -625,6 +625,7 @@ section {
   .service-box .service-info i {
     font-size: 4rem !important;
   }
+  /* Navbar */
   #menu-icon {
     display: block;
   }
@@ -689,6 +690,10 @@ section {
     min-height: auto !important;
     padding: 2rem !important;
     margin: 0 auto !important;
+    transition: transform 0.3s ease-in-out; /* Enable hover effect on the card itself */
+  }
+  .projects-card:hover {
+    transform: translateY(-5px); /* Hover effect on the project card */
   }
   .projects-card img {
     max-width: 100% !important;
@@ -696,7 +701,7 @@ section {
     transition: none !important;
   }
   .projects-card img:hover {
-    transform: none !important;
+    transform: none !important; /* Disable hover effect on the image */
     max-width: 100% !important;
   }
   .contact form {
