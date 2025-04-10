@@ -601,6 +601,11 @@ section {
 // Phone responsiveness
 
 @media (max-width: 480px) {
+  * {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
   html, body {
     width: 100%;
     max-width: 100%;
@@ -608,7 +613,8 @@ section {
   }
 
   section {
-    padding: 5rem 5% !important;
+    padding: 3rem 5% !important;
+    min-height: auto;
   }
 
   .header {
@@ -620,7 +626,7 @@ section {
   }
 
   .navbar {
-    width: 100%; // Full width for smaller screens
+    width: 100%;
     padding: 1rem;
   }
 
@@ -633,134 +639,133 @@ section {
   .home-content {
     align-items: center;
     text-align: center;
-  }
-
-  .home-content h1 {
-    font-size: 5rem; // Adjust font size for smaller screens
-  }
-
-  .home-content h3 {
-    font-size: 2.5rem;
-  }
-
-  .home-content p {
-    font-size: 1.4rem;
-    text-align: justify;
+    
+    h1 {
+      font-size: 3.5rem;
+    }
+    
+    h3 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1.4rem;
+      text-align: center;
+    }
   }
 
   .home-img img {
-    width: 70vw; // Smaller image size
+    width: 70vw;
   }
 
   .about {
     flex-direction: column-reverse;
     text-align: center;
     gap: 3rem;
+    
+    h2 {
+      font-size: 3.5rem;
+    }
+    
+    p {
+      text-align: center;
+    }
+    
+    img {
+      width: 70vw;
+    }
   }
 
-  .about-content p {
-    text-align: justify;
-  }
-
-  .about h2 {
-    font-size: 5rem;
-    margin: 2rem 0;
-  }
-
-  .about img {
-    width: 70vw;
-  }
-
+  /* FIXED SERVICES SECTION */
   .services-container {
-    grid-template-columns: 1fr; // Single column for services
-    gap: 3rem;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 0 5%;
-    margin: 0 auto;
+    gap: 2rem;
   }
 
   .service-box {
-    width: 85%;
-    max-width: 85%;
-    height: auto;
-    min-height: 400px;
-    padding: 2rem;
-    margin: 0 auto;
-    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 2rem !important;
+    margin: 0 auto 2rem !important;
+    
+    .service-info {
+      padding: 1rem !important;
+      
+      h4 {
+        font-size: 2.5rem !important;
+      }
+      
+      p {
+        font-size: 1.3rem !important;
+        text-align: center !important;
+      }
+      
+      i {
+        font-size: 4rem !important;
+      }
+    }
   }
 
-  .service-info {
-    padding: 2rem;
-    width: 100%;
-  }
-
-  .service-info p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
-
-  h4 {
-    font-size: 3rem;
-    margin: 1rem 0;
-  }
-
-  p {
-    font-size: 1.4rem;
-  }
-
-  i {
-    font-size: 5rem;
-  }
-
+  /* FIXED PROJECT CARDS */
   .projects-box {
-    grid-template-columns: 1fr; // Single column for projects
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 0 5%;
+    gap: 2rem;
   }
 
   .projects-card {
-    max-width: 90%; // Reduce card width
-    padding: 3rem 1.5rem;
-    max-width: none;
-    margin: 0 auto;
-  }
-
-  .projects-card img {
-    max-width: 90%;
-  }
-
-  .projects.card img:hover{
-    transform: none;
-    transition: none;
-    max-height: 200px;
-    max-width: 300px;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    padding: 2rem !important;
+    margin: 0 auto !important;
+    
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+      transition: none !important;
+      
+      &:hover {
+        transform: none !important;
+        max-width: 100% !important;
+      }
+    }
+    
+    &:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
   }
 
   .contact form {
     flex-direction: column;
     gap: 2rem;
-  }
-
-  .contact form .input-box input,
-  .contact form textarea {
-    font-size: 1.4rem;
-    padding: 1.5rem;
+    width: 100%;
+    padding: 0 5%;
+    
+    .input-box input,
+    textarea {
+      font-size: 1.4rem;
+      padding: 1.5rem;
+    }
   }
 
   .footer {
-    text-align: center;
     padding: 2rem 0;
-  }
-
-  .footer ul {
-    font-size: 1.4rem;
-  }
-
-  .footer ul li {
-    margin-left: 10px;
-  }
-
-  .footer ul li a {
-    font-size: 1.4rem;
+    
+    ul {
+      font-size: 1.4rem;
+      
+      li {
+        margin: 0 0.5rem;
+      }
+    }
   }
 }

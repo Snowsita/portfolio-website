@@ -528,13 +528,18 @@ section {
   }
 }
 @media (max-width: 480px) {
+  * {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
   html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
   }
   section {
-    padding: 5rem 5% !important;
+    padding: 3rem 5% !important;
+    min-height: auto;
   }
   .header {
     padding: 2rem 5%;
@@ -556,14 +561,14 @@ section {
     text-align: center;
   }
   .home-content h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
   .home-content h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .home-content p {
     font-size: 1.4rem;
-    text-align: justify;
+    text-align: center;
   }
   .home-img img {
     width: 70vw;
@@ -573,74 +578,77 @@ section {
     text-align: center;
     gap: 3rem;
   }
-  .about-content p {
-    text-align: justify;
-  }
   .about h2 {
-    font-size: 5rem;
-    margin: 2rem 0;
+    font-size: 3.5rem;
+  }
+  .about p {
+    text-align: center;
   }
   .about img {
     width: 70vw;
   }
+  /* FIXED SERVICES SECTION */
   .services-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 0 5%;
-    margin: 0 auto;
+    gap: 2rem;
   }
   .service-box {
-    width: 85%;
-    max-width: 85%;
-    height: auto;
-    min-height: 400px;
-    padding: 2rem;
-    margin: 0 auto;
-    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 2rem !important;
+    margin: 0 auto 2rem !important;
   }
-  .service-info {
-    padding: 2rem;
-    width: 100%;
+  .service-box .service-info {
+    padding: 1rem !important;
   }
-  .service-info p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-            hyphens: auto;
+  .service-box .service-info h4 {
+    font-size: 2.5rem !important;
   }
-  h4 {
-    font-size: 3rem;
-    margin: 1rem 0;
+  .service-box .service-info p {
+    font-size: 1.3rem !important;
+    text-align: center !important;
   }
-  p {
-    font-size: 1.4rem;
+  .service-box .service-info i {
+    font-size: 4rem !important;
   }
-  i {
-    font-size: 5rem;
-  }
+  /* FIXED PROJECT CARDS */
   .projects-box {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    width: 100%;
+    padding: 0 5%;
+    gap: 2rem;
   }
   .projects-card {
-    max-width: 90%;
-    padding: 3rem 1.5rem;
-    max-width: none;
-    margin: 0 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    padding: 2rem !important;
+    margin: 0 auto !important;
   }
   .projects-card img {
-    max-width: 90%;
+    max-width: 100% !important;
+    height: auto !important;
+    transition: none !important;
   }
-  .projects.card img:hover {
-    transform: none;
-    transition: none;
-    max-height: 200px;
-    max-width: 300px;
+  .projects-card img:hover {
+    transform: none !important;
+    max-width: 100% !important;
+  }
+  .projects-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
   .contact form {
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    padding: 0 5%;
   }
   .contact form .input-box input,
   .contact form textarea {
@@ -648,16 +656,12 @@ section {
     padding: 1.5rem;
   }
   .footer {
-    text-align: center;
     padding: 2rem 0;
   }
   .footer ul {
     font-size: 1.4rem;
   }
   .footer ul li {
-    margin-left: 10px;
-  }
-  .footer ul li a {
-    font-size: 1.4rem;
+    margin: 0 0.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
