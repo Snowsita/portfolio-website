@@ -17,6 +17,10 @@ body {
   color: white;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .header {
   position: fixed;
   width: 100%;
