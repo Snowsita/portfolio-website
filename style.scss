@@ -643,6 +643,10 @@ section {
     gap: 3rem;
   }
 
+  .about p {
+    text-align: justify;
+  }
+
   .about h2 {
     font-size: 5rem;
     margin: 2rem 0;
@@ -655,11 +659,15 @@ section {
   .services-container {
     grid-template-columns: 1fr; // Single column for services
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .projects-box {
     grid-template-columns: 1fr; // Single column for projects
     gap: 3rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .projects-card {

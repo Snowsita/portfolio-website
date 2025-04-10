@@ -561,6 +561,9 @@ section {
     text-align: center;
     gap: 3rem;
   }
+  .about p {
+    text-align: justify;
+  }
   .about h2 {
     font-size: 5rem;
     margin: 2rem 0;
@@ -571,10 +574,14 @@ section {
   .services-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
   }
   .projects-box {
     grid-template-columns: 1fr;
     gap: 3rem;
+    align-items: center;
+    justify-content: center;
   }
   .projects-card {
     max-width: 90%;
