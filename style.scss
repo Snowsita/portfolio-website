@@ -84,7 +84,7 @@ body {
   @include transform;
 }
 
-#logo-span {
+span {
   @include gradient;
   background-clip: text;
   color: transparent;
@@ -395,4 +395,36 @@ section {
 
 .projects-card p{
   font-size: 1.6rem;
+}
+
+// Contact styling
+
+.contact{
+  background-color: $bg-color;
+}
+
+.contact h2 {
+  margin-bottom: 3rem;
+  color: $text-color;
+}
+
+.contact form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.contact form .input-box input, .contact form textarea{
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: $text-color;
+  background-color: $bg-color;
+  border-radius: 2rem;
+  border: 2px solid $main-color;
+  margin: 1.5rem 0;
+  resize: none;
 }
