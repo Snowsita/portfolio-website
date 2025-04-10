@@ -61,7 +61,7 @@ html, body {
   width: 100%;
   top: 0;
   left: 0;
-  padding: 4rem 15%;
+  padding: 2rem 7%;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   display: flex;
@@ -877,6 +877,10 @@ section {
     .service-box, 
     .projects-card {
       max-width: 280px !important; /* Slightly narrower */
+    }
+    
+    .header {
+      padding: 2rem 7%;
     }
   }
 }
