@@ -600,132 +600,23 @@ section {
 
 // Phone responsiveness
 
-@media (max-width: 480px) {
-  * {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    box-sizing: border-box;
-  }
+@media(max-width: 480px){
 
   html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    min-width: 0;
   }
 
   section {
-    padding: 3rem 5% !important;
-    min-height: auto;
+    padding: 5rem 5%;
   }
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  .header {
-    padding: 2rem 5%;
-  }
-
-  #menu-icon {
+  #menu-icon{
     display: block;
   }
 
-  .navbar {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .home {
-    flex-direction: column-reverse;
-    margin: 3rem 0;
-    gap: 3rem;
-  }
-
-  .home-content {
-    align-items: center;
-    text-align: center;
-    
-    h1 {
-      font-size: 3.5rem;
-    }
-    
-    h3 {
-      font-size: 2rem;
-    }
-    
-    p {
-      font-size: 1.4rem;
-      text-align: justify; /* Added text justification */
-    }
-  }
-
-  .home-img img {
-    width: 70vw;
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px; /* Added margin-top */
-  }
-
-  .about {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 3rem;
-    
-    h2 {
-      font-size: 3.5rem;
-    }
-    
-    p {
-      text-align: justify; /* Added text justification */
-    }
-    
-    img {
-      width: 70vw;
-      max-width: 100%;
-    }
-  }
-
-  .services-container {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0 5%;
-    gap: 2rem;
-  }
-
-  .service-box {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    padding: 2rem !important;
-    margin: 0 auto 2rem !important;
-    
-    .service-info {
-      padding: 1rem !important;
-      
-      h4 {
-        font-size: 2.5rem !important;
-      }
-      
-      p {
-        font-size: 1.3rem !important;
-        text-align: center !important;
-      }
-      
-      i {
-        font-size: 4rem !important;
-      }
-    }
-  }
-
-  #menu-icon {
-    display: block;
-  }
-
-  .navbar {
+  .navbar{
     position: absolute;
     top: 100%;
     right: 0%;
@@ -741,100 +632,96 @@ section {
     transition: max-height 1s ease-in-out, opacity 1s ease-in-out, visibility 1s ease-in-out;
   }
 
-  .navbar.active {
+  .navbar.active{
     max-height: 300px;
     opacity: 1;
     visibility: visible;
   }
+
 
   .navbar a {
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
     color: $text-color;
-    opacity: 0;
+    opacity: 0; 
     transform: translateY(-10px);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease;
   }
-
+  
   .navbar.active a {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); 
   }
-
+  
   .navbar.active a:nth-child(1) {
-    transition-delay: 0.2s;
+    transition-delay: 0.2s; 
   }
-
+  
   .navbar.active a:nth-child(2) {
     transition-delay: 0.4s;
   }
-
+  
   .navbar.active a:nth-child(3) {
     transition-delay: 0.6s;
   }
-
+  
   .navbar.active a:nth-child(4) {
     transition-delay: 0.8s;
   }
-
+  
   .navbar.active a:nth-child(5) {
     transition-delay: 1s;
   }
 
-  .projects-box {
-    grid-template-columns: 1fr;
-    width: 100%;
-    padding: 0 5%;
-    gap: 2rem;
+  .gradient-btn {
+    display: none;
+  }
+
+  .home{
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+
+  .home-content{
+    align-items: center;
+  }
+
+  .home-img img{
+    width: 56vw;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about h2{
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .about img{
+    width: 52vw;
+  }
+
+  .contact form{
+    flex-direction: column;
+  }
+
+  .services-container {
+    width: 95%;
+    margin: 0 auto;
   }
 
   .projects-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: auto !important;
-    padding: 2rem !important;
-    margin: 0 auto !important;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .projects-card:hover {
-    transform: scale(1.02); /* Changed to scale */
-  }
-
-  .projects-card img {
-    max-width: 100% !important;
-    height: auto !important;
-    transition: none !important;
+    width: 95%;
   }
 
   .projects-card img:hover {
     transform: none !important;
-    max-width: 100% !important;
+    max-width: 300px;
+    max-height: 200px;
   }
 
-  .contact form {
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    padding: 0 5%;
-    
-    .input-box input,
-    textarea {
-      font-size: 1.4rem;
-      padding: 1.5rem;
-    }
-  }
-
-  .footer {
-    padding: 2rem 0;
-    
-    ul {
-      font-size: 1.4rem;
-      
-      li {
-        margin: 0 0.5rem;
-      }
-    }
-  }
 }
