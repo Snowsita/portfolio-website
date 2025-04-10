@@ -521,4 +521,85 @@ section {
   .contact form {
     flex-direction: column;
   }
+}
+@media (max-width: 480px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    width: 100%;
+    padding: 1rem;
+  }
+  .home {
+    flex-direction: column-reverse;
+    margin: 3rem 0;
+    gap: 3rem;
+  }
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+  .home-content p {
+    font-size: 1.4rem;
+    text-align: justify;
+  }
+  .home-img img {
+    width: 70vw;
+  }
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3rem;
+  }
+  .about h2 {
+    font-size: 5rem;
+    margin: 2rem 0;
+  }
+  .about img {
+    width: 70vw;
+  }
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .projects-box {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .projects-card {
+    max-width: 90%;
+    padding: 3rem 1.5rem;
+  }
+  .projects-card img {
+    max-width: 100%;
+    max-height: 150px;
+  }
+  .contact form {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .contact form .input-box input,
+  .contact form textarea {
+    font-size: 1.4rem;
+    padding: 1.5rem;
+  }
+  .footer {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .footer ul {
+    font-size: 1.4rem;
+  }
+  .footer ul li {
+    margin-left: 10px;
+  }
+  .footer ul li a {
+    font-size: 1.4rem;
+  }
 }/*# sourceMappingURL=style.css.map */
