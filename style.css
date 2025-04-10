@@ -151,10 +151,10 @@ section {
 }
 
 .social-icons a:hover {
+  box-shadow: 0 0 25px #ea580c;
   color: white;
   background-color: #ea580c;
   transform: scale(1.2) translateY(-5px);
-  box-shadow: 0 0 25px #ea580c;
 }
 
 .btn-group {
@@ -164,6 +164,7 @@ section {
 
 .btn {
   box-shadow: 0 0 25px #ea580c;
+  transition: 0.3s ease-in-out;
   display: inline-block;
   padding: 1rem 3rem;
   background-color: #ea580c;
@@ -172,7 +173,6 @@ section {
   color: black;
   border: 2px solid transparent;
   font-weight: 600;
-  transition: 0.3s ease-in-out;
 }
 
 .btn:hover {
@@ -191,4 +191,48 @@ section {
   box-shadow: 0 0 25px #ea580c;
   background-color: #ea580c;
   color: black;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  background-color: #101010;
+}
+
+.about-img img {
+  box-shadow: 0 0 25px #ea580c;
+  transition: 0.3s ease-in-out;
+  width: 32vw;
+  border: 50%;
+}
+
+.about-img img:hover {
+  box-shadow: 0 0 25px #ea580c, 0 0 50px #ea580c, 0 0 100px #ea580c;
+}
+
+.about-content h2 {
+  font-size: 7rem;
+  text-align: left;
+}
+
+.about-content p {
+  font-size: 1.8rem;
+}
+
+.about-content .btn {
+  margin: 3rem 0;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ea580c;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #080808;
 }/*# sourceMappingURL=style.css.map */

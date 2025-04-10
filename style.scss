@@ -19,8 +19,14 @@ $span-color2: #ff1d15;
   transition: 0.3s ease-in-out;
 }
 
-@mixin box-shadow {
-  box-shadow: 0 0 25px $main-color;
+@mixin box-shadow($color) {
+  box-shadow: 0 0 25px $color;
+}
+
+@mixin increasing-box-shadow {
+  box-shadow: 0 0 25px $main-color,
+  0 0 50px $main-color, 
+  0 0 100px $main-color;
 }
 
 // Main styling
@@ -155,16 +161,14 @@ section {
 }
 
 .home-img img{
-  @include box-shadow;
+  @include box-shadow($main-color);
   @include transition;
   width: 30vw;
   border-radius: 50%;
 }
 
 .home-img img:hover{
-  box-shadow: 0 0 25px $main-color,
-              0 0 50px $main-color, 
-              0 0 100px $main-color;
+  @include increasing-box-shadow;
 }
 
 .social-icons a{
@@ -182,10 +186,10 @@ section {
 }
 
 .social-icons a:hover {
+  @include box-shadow($main-color);
   color: $text-color;
   background-color: $main-color;
   transform: scale(1.2)translateY(-5px);
-  @include box-shadow();
 }
 
 // Button styling
@@ -195,7 +199,8 @@ section {
 }
 
 .btn {
-  @include box-shadow;
+  @include box-shadow($main-color);
+  @include transition;
   display: inline-block;
   padding: 1rem 3rem;
   background-color: $main-color;
@@ -204,7 +209,6 @@ section {
   color: black;
   border: 2px solid transparent;
   font-weight: 600;
-  @include transition;
 }
 
 .btn:hover {
@@ -221,7 +225,55 @@ section {
 }
 
 .btn-group a:nth-of-type(2):hover{
-  @include box-shadow;
+  @include box-shadow($main-color);
   background-color: $main-color;
   color: black;
+}
+
+// About styling
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  background-color: $bg-color2;
+}
+
+.about-img img{
+  @include box-shadow($main-color);
+  @include transition;
+  width: 32vw;
+  border: 50%;
+}
+
+.about-img img:hover{
+  @include increasing-box-shadow;
+}
+
+.about-content h2 {
+  font-size: 7rem;
+  text-align: left;
+}
+
+.about-content p {
+  font-size: 1.8rem;
+}
+
+.about-content .btn {
+  margin: 3rem 0;
+}
+
+// Scrollbar styling
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $bg-color;
 }
