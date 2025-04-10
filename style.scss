@@ -680,7 +680,9 @@ section {
   }
 
   .service-box {
-    width: 380px;
+    width: 85%;
+    max-width: 85%;
+    min-width: 85%;
     height: auto;
     min-height: 400px;
     padding: 2rem;
