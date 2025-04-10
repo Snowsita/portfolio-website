@@ -604,12 +604,14 @@ section {
   * {
     max-width: 100% !important;
     overflow-x: hidden !important;
+    box-sizing: border-box; /* Ensure padding and border are included in width calculations */
   }
 
   html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    min-width: 0; /* Prevent overflow caused by min-width */
   }
 
   section {
@@ -656,6 +658,8 @@ section {
 
   .home-img img {
     width: 70vw;
+    max-width: 100%; /* Prevent overflow */
+    height: auto;
   }
 
   .about {
@@ -673,6 +677,7 @@ section {
     
     img {
       width: 70vw;
+      max-width: 100%; /* Prevent overflow */
     }
   }
 
