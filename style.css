@@ -48,4 +48,41 @@ body {
 
 .logo:hover {
   transform: scale(1.1);
+}
+
+#logo-span {
+  background: linear-gradient(270deg, #DF8908 10%, #ff1d15 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  color: white;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover {
+  color: #ea580c;
+  border-bottom: 3px solid #ea580c;
+}
+
+.gradient-btn {
+  background: linear-gradient(270deg, #DF8908 10%, #ff1d15 100%);
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: white;
+  text-wrap: nowrap;
+  letter-spacing: 1px;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=style.css.map */

@@ -1,9 +1,19 @@
-// Defining color variables
+// Mixins and variables
 
 $bg-color: #080808;
 $bg-color2: #101010;
 $text-color: white;
 $main-color: #ea580c;
+$span-color: #DF8908;
+$span-color2: #ff1d15;
+
+@mixin gradient{
+  background: linear-gradient(270deg, $span-color 10%, $span-color2 100%);
+}
+
+@mixin transform {
+  transform: scale(1.1);
+}
 
 * {
   margin: 0;
@@ -53,6 +63,42 @@ body {
 }
 
 .logo:hover {
-  transform: scale(1.1);
+  @include transform;
+}
+
+#logo-span {
+  @include gradient;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar a{
+  font-size: 1.8rem;
+  color: $text-color;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover{
+  color: $main-color;
+  border-bottom: 3px solid $main-color;
+}
+
+.gradient-btn{
+  @include gradient;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: $text-color;
+  text-wrap: nowrap;
+  letter-spacing: 1px;
+}
+
+.gradient-btn:hover{
+  @include transform;
 }
 
