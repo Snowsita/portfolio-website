@@ -1,3 +1,10 @@
+// Defining color variables
+
+$bg-color: #080808;
+$bg-color2: #101010;
+$text-color: white;
+$main-color: #ea580c;
+
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +20,8 @@ html {
 }
 
 body {
-  background-color: #080808;
-  color: white;
+  background-color: $bg-color;
+  color: $text-color;
 }
 
 .header {
@@ -24,8 +31,7 @@ body {
   left: 0;
   padding: 4rem 15%;
   background: rgba(0, 0, 0, 0.3);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,13 +40,13 @@ body {
 
 #menu-icon {
   font-size: 3.5rem;
-  color: #ea580c;
+  color: $main-color;
   display: none;
 }
 
-.logo {
+.logo{
   font-size: 3rem;
-  color: white;
+  color: $text-color;
   font-weight: 800;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -48,4 +54,5 @@ body {
 
 .logo:hover {
   transform: scale(1.1);
-}/*# sourceMappingURL=style.css.map */
+}
+
