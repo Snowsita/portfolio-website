@@ -428,3 +428,40 @@ section {
   margin: 1.5rem 0;
   resize: none;
 }
+
+// Footer styling
+
+.footer{
+  background-color: $bg-color2;
+  padding: 50px 0;
+}
+
+.footer .social-icons{
+  text-align: center;
+}
+
+.footer ul{
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.footer ul li{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer ul li a{
+  color: white;
+  border-bottom: 3px solid transparent;
+  @include transition;
+}
+
+.footer ul li a:hover{
+  border-bottom: 3px solid $main-color;
+}
+
+.footer .copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
