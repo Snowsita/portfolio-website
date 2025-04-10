@@ -682,7 +682,6 @@ section {
   .service-box {
     width: 85%;
     max-width: 85%;
-    min-width: 85%;
     height: auto;
     min-height: 400px;
     padding: 2rem;
@@ -733,6 +732,8 @@ section {
   .projects.card img:hover{
     transform: none;
     transition: none;
+    max-height: 200px;
+    max-width: 300px;
   }
 
   .contact form {
