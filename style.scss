@@ -600,6 +600,20 @@ section {
 // Phone responsiveness
 
 @media (max-width: 480px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 5rem 5% !important;
+  }
+
+  .header {
+    padding: 2rem 5%;
+  }
+
   #menu-icon {
     display: block;
   }
@@ -643,7 +657,7 @@ section {
     gap: 3rem;
   }
 
-  .about p {
+  .about-content p {
     text-align: justify;
   }
 
@@ -658,26 +672,60 @@ section {
 
   .services-container {
     grid-template-columns: 1fr; // Single column for services
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+  }
+
+  .service-box {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 400px;
+    padding: 2rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .service-info {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .service-info p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  h4 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  i {
+    font-size: 5rem;
   }
 
   .projects-box {
     grid-template-columns: 1fr; // Single column for projects
     gap: 3rem;
-    align-items: center;
-    justify-content: center;
   }
 
   .projects-card {
     max-width: 90%; // Reduce card width
     padding: 3rem 1.5rem;
+    max-width: none;
+    margin: 0 auto;
   }
 
   .projects-card img {
-    max-width: 100%;
-    max-height: 150px; // Adjust image size
+    max-width: 90%;
   }
 
   .contact form {
