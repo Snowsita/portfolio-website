@@ -301,4 +301,53 @@ section {
 
 .service-info i {
   font-size: 8rem;
+}
+
+.projects {
+  background-color: #101010;
+}
+
+.projects-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  place-items: center;
+  gap: 3rem;
+  row-gap: 5rem;
+}
+
+.projects-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #080808;
+  border: 2px solid #ea580c;
+  border-radius: 3rem;
+  gap: 2rem;
+  padding: 5rem 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ea580c;
+  transition: 0.3s ease;
+}
+
+.projects-card:hover {
+  box-shadow: 0 0 25px #ea580c, 0 0 50px #ea580c;
+  transform: scale(1.02);
+}
+
+.projects-card img {
+  max-width: 300px;
+  border-radius: 2em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.projects-card h3 {
+  font-size: 3rem;
+}
+
+.projects-card p {
+  font-size: 1.6rem;
 }/*# sourceMappingURL=style.css.map */
