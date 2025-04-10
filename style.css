@@ -591,9 +591,7 @@ section {
     margin: 0 auto;
   }
   .service-box {
-    width: 80%;
-    max-width: 80%;
-    min-width: 80%;
+    width: 380px;
     height: auto;
     min-height: 400px;
     padding: 2rem;
@@ -632,6 +630,10 @@ section {
   }
   .projects-card img {
     max-width: 90%;
+  }
+  .projects.card img:hover {
+    transform: none;
+    transition: none;
   }
   .contact form {
     flex-direction: column;
