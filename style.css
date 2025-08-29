@@ -9,7 +9,6 @@
 
 html {
   font-size: 60%;
-  overflow-x: hidden;
 }
 
 body {
@@ -17,7 +16,8 @@ body {
   color: white;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -28,8 +28,7 @@ html, body {
   left: 0;
   padding: 2rem 7%;
   background: rgba(0, 0, 0, 0.3);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,8 +56,7 @@ html, body {
 
 span {
   background: linear-gradient(270deg, #004646 10%, #00bab9 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -74,6 +72,39 @@ span {
 .navbar a:hover {
   color: #05afaf;
   border-bottom: 3px solid #05afaf;
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 3rem;
+  cursor: pointer;
+  border: 2px solid #05afaf;
+  transition: 0.3s ease-in-out;
+}
+
+.lang-btn.active {
+  background-color: #05afaf;
+  color: black;
+  box-shadow: 0 0 25px #05afaf;
+}
+
+.lang-btn:not(.active) {
+  background-color: transparent;
+  color: #05afaf;
+}
+
+.lang-btn:not(.active):hover {
+  background-color: #05afaf;
+  color: black;
+  box-shadow: 0 0 25px #05afaf;
 }
 
 .gradient-btn {
@@ -177,7 +208,7 @@ section {
   border-radius: 3rem;
   font-size: 1.8rem;
   color: black;
-  border: 2px solid transparent;
+  border: 2px solid #05afaf;
   font-weight: 600;
 }
 
@@ -266,9 +297,9 @@ section {
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .service-box {
@@ -349,6 +380,14 @@ section {
   transition: 0.3s ease;
 }
 
+[data-key] {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.lang-fade {
+  opacity: 0;
+}
+
 .projects-card:hover {
   box-shadow: 0 0 25px #05afaf, 0 0 50px #05afaf;
   transform: scale(1.02);
@@ -359,8 +398,7 @@ section {
   min-height: 200px;
   max-height: 200px;
   border-radius: 2em;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: 0.5s ease-in-out;
   border: 1px solid #05afaf;
 }
@@ -398,7 +436,8 @@ section {
   text-align: center;
 }
 
-.contact form .input-box input, .contact form textarea {
+.contact form .input-box input,
+.contact form textarea {
   width: 100%;
   padding: 2.5rem;
   font-size: 1.8rem;
@@ -528,7 +567,8 @@ section {
   }
 }
 @media (max-width: 480px) {
-  html, body {
+  html,
+  body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -631,7 +671,8 @@ section {
   }
 }
 @media (max-width: 390px) {
-  html, body {
+  html,
+  body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -739,17 +780,18 @@ section {
     max-width: 300px;
     max-height: 200px;
   }
-  /* Media Query Fallbacks for Tiny Screens */
 }
 @media (max-width: 390px) and (max-width: 345px) {
   section {
-    padding: 4rem 5% !important; /* Even tighter padding */
+    padding: 4rem 5% !important;
   }
   .service-box,
   .projects-card {
-    max-width: 280px !important; /* Slightly narrower */
+    max-width: 280px !important;
   }
   .header {
     padding: 2rem 7%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

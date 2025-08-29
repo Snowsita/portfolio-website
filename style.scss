@@ -114,7 +114,7 @@ span {
   font-weight: 600;
   border-radius: 3rem;
   cursor: pointer;
-  border: 2px solid black;
+  border: 2px solid $main-color;
   @include transition;
 }
 
@@ -236,7 +236,7 @@ section {
   border-radius: 3rem;
   font-size: 1.8rem;
   color: black;
-  border: 2px solid black !important;
+  border: 2px solid $main-color;
   font-weight: 600;
 }
 
@@ -326,9 +326,9 @@ section {
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .service-box {
