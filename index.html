@@ -1,304 +1,537 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Enmanuel Torres - Software Engineer Portfolio</title>
-    <link rel="stylesheet" href="style.css"/>
+    <title>Enmanuel Torres — Software Engineer</title>
+    <meta name="description" content="Software Engineer at Remitly and CEO of Vanter. Building high-performance software in Go, React, and Java."/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="style.css"/>
 </head>
 
-<body>
+<body class="antialiased selection:bg-accent selection:text-ink-950">
 
-<header class="header">
-    <a href="#home" class="logo">
-        Enmanuel <span>Torres</span>
-    </a>
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-ink-950/70 border-b border-ink-700/50">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between gap-6">
+        <a href="#home" class="flex items-center gap-2 group shrink-0">
+            <span class="mono text-accent text-xl group-hover:rotate-90 transition-transform duration-300">*</span>
+            <span class="display font-semibold tracking-tight text-white">Enmanuel</span>
+        </a>
 
-    <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar flex items-center gap-8 text-sm text-muted">
+            <a href="#home" class="hover:text-white transition-colors" data-i18n="nav.home">Home</a>
+            <a href="#about" class="hover:text-white transition-colors" data-i18n="nav.about">About</a>
+            <a href="#history" class="hover:text-white transition-colors" data-i18n="nav.history">History</a>
+            <a href="#services" class="hover:text-white transition-colors" data-i18n="nav.services">Services</a>
+            <a href="#projects" class="hover:text-white transition-colors" data-i18n="nav.work">Work</a>
+            <a href="#axiom" class="hover:text-white transition-colors">Axiom</a>
+            <a href="#contact" class="hover:text-white transition-colors" data-i18n="nav.contact">Contact</a>
+        </nav>
 
-    <nav class="navbar">
-        <a href="#home" data-key="nav-home">Home</a>
-        <a href="#about" data-key="nav-about">About</a>
-        <a href="#services" data-key="nav-services">Services</a>
-        <a href="#projects" data-key="nav-projects">Projects</a>
-        <a href="#contact" data-key="nav-contact">Contact</a>
-    </nav>
+        <div class="flex items-center gap-5">
+            <div id="lang-switcher" class="hidden md:flex items-center gap-1 mono text-xs">
+                <!-- buttons injected by script.js -->
+            </div>
 
-    <div class="header-btns">
-        <a href="#contact" class="btn">Let's Connect</a>
-    </div>
+            <div class="hidden md:flex items-center gap-4 text-lg text-muted">
+                <a href="https://github.com/Snowsita" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-accent transition-colors"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/enmanuel-torres-52a45321a/" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-accent transition-colors"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://x.com/SnowDra" target="_blank" rel="noopener" aria-label="X" class="hover:text-accent transition-colors"><i class="bx bxl-twitter"></i></a>
+            </div>
 
-    <div class="language-toggle">
-        <button id="lang-en" class="btn lang-btn active">EN</button>
-        <button id="lang-es" class="btn lang-btn">ES</button>
+            <button id="menu-icon" class="md:hidden text-2xl text-white" aria-label="Toggle menu">
+                <i class="bx bx-menu"></i>
+            </button>
+        </div>
     </div>
 </header>
 
-<section class="home" id="home">
-    <div class="home-content">
-        <h1 data-key="home-title">Welcome, I'm <span>Enmanuel Torres</span></h1>
-        <h3 data-key="home-role">Senior <span>Full-Stack Developer</span></h3>
-        <p data-key="home-desc">Accomplished Software Engineering Team Lead with over five years of experience driving
-            modernization and stability in enterprise environments. I specialize in leading cross-functional teams to
-            deliver reliable, scalable solutions, resolve complex architectural challenges, and implement strategic
-            improvements in data management. My expertise spans Java, Hibernate, and WebSphere, with a strong commitment
-            to performance optimization, security, and maintainability.</p>
-        <div class="social-icons">
-            <a href="https://github.com/Snowsita" target="_blank" rel="noopener">
-                <i class="bx bxl-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/enmanuel-torres-52a45321a/" target="_blank" rel="noopener">
-                <i class="bx bxl-linkedin-square"></i>
-            </a>
-            <a href="https://www.instagram.com/eatorres04" target="_blank" rel="noopener">
-                <i class="bx bxl-instagram-alt"></i>
-            </a>
-            <a href="https://x.com/SnowDra" target="_blank" rel="noopener">
-                <i class="bx bxl-twitter"></i>
-            </a>
-        </div>
+<main class="pt-20">
 
-        <div class="btn-group">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="https://drive.google.com/file/d/1NmvU_EkgXJiUX1ImUttA_bSQlTjsRoKJ/view?usp=sharing" target="_blank"
-               class="btn">Download CV</a>
+    <!-- HERO -->
+    <section id="home" class="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+            <div class="lg:col-span-5 reveal">
+                <p class="text-muted mb-4" data-i18n="hero.greeting">Hey there,</p>
+                <h1 class="display font-bold text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tightest text-white" data-i18n="hero.name">
+                    I'm Enmanuel<br>Torres
+                </h1>
+                <p class="mt-6 text-accent flex items-center gap-3">
+                    <span aria-hidden="true">—</span>
+                    <span class="text-base md:text-lg" data-i18n="hero.role">Software Engineer &amp; Founder</span>
+                </p>
+                <p class="mt-6 text-muted leading-relaxed max-w-md" data-i18n="hero.desc">
+                    Software Engineer at <a href="https://www.remitly.com" target="_blank" rel="noopener" class="text-white hover:text-accent transition-colors underline-offset-4 hover:underline">Remitly</a>,
+                    where I build Go services, bank integrations, and React Native experiences.
+                    Founder &amp; CEO of <a href="https://vanter.net" target="_blank" rel="noopener" class="text-white hover:text-accent transition-colors underline-offset-4 hover:underline">Vanter</a>,
+                    a SaaS company shipping high-performance digital infrastructure.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-soft text-ink-950 font-medium px-6 py-3 rounded-md transition-colors" data-i18n="hero.cta_contact">
+                        Get in touch <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1NmvU_EkgXJiUX1ImUttA_bSQlTjsRoKJ/view?usp=sharing"
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent hover:text-accent text-white px-6 py-3 rounded-md transition-colors" data-i18n="hero.cta_cv">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 reveal flex justify-center">
+                <div class="relative w-full max-w-sm">
+                    <div class="aspect-square rounded-2xl overflow-hidden img-halo bg-ink-800">
+                        <img src="profile.jpg" alt="Profile" class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 mono text-accent text-2xl">*</div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 reveal flex flex-col gap-8 lg:border-l lg:border-ink-700/60 lg:pl-8">
+                <div>
+                    <div class="display font-semibold text-5xl text-white leading-none">6<span class="text-accent">+</span></div>
+                    <div class="mt-2 text-muted text-sm leading-snug" data-i18n="stats.years">Years engineering<br>across the stack</div>
+                </div>
+                <div>
+                    <div class="display font-semibold text-5xl text-white leading-none">6<span class="text-accent"></span></div>
+                    <div class="mt-2 text-muted text-sm leading-snug" data-i18n="stats.companies">Companies<br>engineered for</div>
+                </div>
+                <div>
+                    <div class="display font-semibold text-5xl text-white leading-none">150<span class="text-accent">+</span></div>
+                    <div class="mt-2 text-muted text-sm leading-snug" data-i18n="stats.bugs">Production bugs<br>resolved at scale</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="border-t border-ink-700/50 py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-10 reveal">
+            <div class="lg:col-span-5">
+                <p class="text-accent text-sm mb-4" data-i18n="about.tag">— About me</p>
+                <h2 class="display font-bold text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tightest text-white" data-i18n="about.title">
+                    Engineering<br>since I was 16.
+                </h2>
+            </div>
+            <div class="lg:col-span-7 space-y-5 text-muted leading-relaxed text-lg">
+                <p data-i18n="about.p1">
+                    I'm a software engineer based in Matagalpa, Nicaragua, with deep experience
+                    shipping enterprise software end-to-end — from architecting cloud-native services
+                    to modernizing decade-old legacy stacks.
+                </p>
+                <p data-i18n="about.p2">
+                    Today I split my time between two things I love: building reliable
+                    money-movement software at <strong class="text-white font-medium">Remitly</strong> in
+                    Go and React Native, and growing <strong class="text-white font-medium">Vanter</strong>,
+                    the SaaS company I founded in March 2026 to design high-performance products
+                    for sectors that are usually stuck on spreadsheets.
+                </p>
+                <p data-i18n="about.p3">
+                    I've led teams through Java&nbsp;8&nbsp;→&nbsp;21 migrations, replaced raw JDBC
+                    with session-per-request Hibernate, hardened Spring Security boundaries, and
+                    delivered 100% production uptime on systems that used to crash daily.
+                    I care about correctness, clarity and maintainability — in that order.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section id="history" class="border-t border-ink-700/50 py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-4 reveal lg:sticky lg:top-28 self-start">
+                <p class="text-accent text-sm mb-4" data-i18n="history.tag">— My history</p>
+                <h2 class="display font-bold text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tightest text-white" data-i18n="history.title">
+                    Take a look<br>at my experience.
+                </h2>
+                <a href="#contact" class="mt-8 inline-flex items-center gap-2 bg-accent hover:bg-accent-soft text-ink-950 font-medium px-6 py-3 rounded-md transition-colors" data-i18n="hero.cta_contact">
+                    Get in touch <i class="bx bx-right-arrow-alt"></i>
+                </a>
+            </div>
+
+            <div class="lg:col-span-8 divide-y divide-ink-700/60">
+
+                <article class="reveal py-8 first:pt-0 grid grid-cols-[24px_1fr] gap-5">
+                    <span class="t-mark text-2xl pt-1">*</span>
+                    <div>
+                        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                            <h3 class="display font-semibold text-2xl text-white">Remitly</h3>
+                            <span class="mono text-muted text-sm" data-i18n="hist.remitly.dates">Dec 2025 — Present</span>
+                        </div>
+                        <p class="text-accent/90 text-sm mb-3" data-i18n="hist.remitly.role">Software Engineer · Go, React Native, AWS</p>
+                        <p class="text-muted leading-relaxed" data-i18n="hist.remitly.desc">
+                            Building bank integrations, Go microservices and AWS Secrets-managed
+                            flows for a global remittance platform. End-to-end ownership: API design,
+                            backend services, frontend wiring, E2E testing. Also working on AI/ML,
+                            MCP server creation, and internal Skills tooling.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="reveal py-8 grid grid-cols-[24px_1fr] gap-5">
+                    <span class="t-mark text-2xl pt-1">*</span>
+                    <div>
+                        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                            <h3 class="display font-semibold text-2xl text-white">Vanter</h3>
+                            <span class="mono text-muted text-sm" data-i18n="hist.vanter.dates">Mar 2026 — Present</span>
+                        </div>
+                        <p class="text-accent/90 text-sm mb-3" data-i18n="hist.vanter.role">Founder &amp; CEO · vanter.net</p>
+                        <p class="text-muted leading-relaxed" data-i18n="hist.vanter.desc">
+                            SaaS company building high-performance software and digital infrastructure.
+                            First product: <strong class="text-white font-medium">Axiom</strong>,
+                            a school administration platform. Membership platforms for gyms and
+                            bookstores up next.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="reveal py-8 grid grid-cols-[24px_1fr] gap-5">
+                    <span class="t-mark text-2xl pt-1">*</span>
+                    <div>
+                        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                            <h3 class="display font-semibold text-2xl text-white">Ahinko International</h3>
+                            <span class="mono text-muted text-sm" data-i18n="hist.ahinko.dates">May 2025 — Dec 2025</span>
+                        </div>
+                        <p class="text-accent/90 text-sm mb-3" data-i18n="hist.ahinko.role">Team Lead &amp; Full-stack Developer · Oviedo, FL</p>
+                        <p class="text-muted leading-relaxed" data-i18n="hist.ahinko.desc">
+                            Led a team of 4 modernizing legacy enterprise systems on Java, Hibernate
+                            and WebSphere. Achieved 100% production uptime over 30 days, eliminated
+                            daily server crashes, resolved 150+ critical bugs, spearheaded the migration
+                            from Java&nbsp;8&nbsp;→&nbsp;21, WebSphere&nbsp;→&nbsp;Open&nbsp;Liberty,
+                            AngularJS&nbsp;→&nbsp;Angular&nbsp;19.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="reveal py-8 grid grid-cols-[24px_1fr] gap-5">
+                    <span class="t-mark text-2xl pt-1">*</span>
+                    <div>
+                        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                            <h3 class="display font-semibold text-2xl text-white">Guatemala Software Service</h3>
+                            <span class="mono text-muted text-sm" data-i18n="hist.gss.dates">Aug 2023 — May 2025</span>
+                        </div>
+                        <p class="text-accent/90 text-sm mb-3" data-i18n="hist.gss.role">Full-stack Developer · Guatemala City</p>
+                        <p class="text-muted leading-relaxed" data-i18n="hist.gss.desc">
+                            Architected REST APIs in Spring Boot and Angular for an employee
+                            management SaaS, increasing operational efficiency by 60%. Provided
+                            cross-stack support across .NET, Node.js, and React.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="reveal py-8 grid grid-cols-[24px_1fr] gap-5">
+                    <span class="t-mark text-2xl pt-1">*</span>
+                    <div>
+                        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                            <h3 class="display font-semibold text-2xl text-white">Sigel Tech Services</h3>
+                            <span class="mono text-muted text-sm" data-i18n="hist.sigel.dates">Jul 2022 — Aug 2023</span>
+                        </div>
+                        <p class="text-accent/90 text-sm mb-3" data-i18n="hist.sigel.role">Full-stack Developer · Matagalpa</p>
+                        <p class="text-muted leading-relaxed" data-i18n="hist.sigel.desc">
+                            Engineered REST APIs and managed full deployment lifecycles across
+                            UAT, QA, and production. Executed zero-downtime Oracle and PostgreSQL
+                            migrations.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="reveal py-8 grid grid-cols-[24px_1fr] gap-5">
+                    <span class="t-mark text-2xl pt-1">*</span>
+                    <div>
+                        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                            <h3 class="display font-semibold text-2xl text-white">Arrocera Santa Isabel</h3>
+                            <span class="mono text-muted text-sm" data-i18n="hist.arrocera.dates">Feb 2020 — Jul 2022</span>
+                        </div>
+                        <p class="text-accent/90 text-sm mb-3" data-i18n="hist.arrocera.role">Full-stack Developer · Matagalpa</p>
+                        <p class="text-muted leading-relaxed" data-i18n="hist.arrocera.desc">
+                            Built a custom invoicing and inventory system on MySQL — optimized to
+                            handle 100,000+ records and cut query times by 60%.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="border-t border-ink-700/50 py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-4 reveal lg:sticky lg:top-28 self-start">
+                <p class="text-accent text-sm mb-4" data-i18n="services.tag">— My services</p>
+                <h2 class="display font-bold text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tightest text-white" data-i18n="services.title">
+                    What I build<br>for clients.
+                </h2>
+                <a href="#projects" class="mt-8 inline-flex items-center gap-2 border border-ink-600 hover:border-accent hover:text-accent text-white px-6 py-3 rounded-md transition-colors" data-i18n="services.cta">
+                    Browse work
+                </a>
+            </div>
+
+            <div class="lg:col-span-8 divide-y divide-ink-700/60">
+
+                <a href="#contact" class="group reveal py-6 grid grid-cols-[40px_1fr_auto] gap-5 items-center hover:px-2 transition-all">
+                    <i class="bx bx-code-block text-3xl text-accent"></i>
+                    <div>
+                        <h4 class="display font-semibold text-xl text-white mb-1" data-i18n="srv.fullstack.title">Full-stack Engineering</h4>
+                        <p class="text-muted text-sm leading-relaxed" data-i18n="srv.fullstack.desc">End-to-end product development in Go, Java, TypeScript and React/React Native — backend services, frontend, database, deploy.</p>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-2xl text-muted group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+                <a href="#contact" class="group reveal py-6 grid grid-cols-[40px_1fr_auto] gap-5 items-center hover:px-2 transition-all">
+                    <i class="bx bx-server text-3xl text-accent"></i>
+                    <div>
+                        <h4 class="display font-semibold text-xl text-white mb-1" data-i18n="srv.cloud.title">Microservices &amp; Cloud</h4>
+                        <p class="text-muted text-sm leading-relaxed" data-i18n="srv.cloud.desc">Go microservices, Spring Boot APIs, AWS Secrets Manager, Docker, CI/CD. Scalable infrastructure that doesn't page you at 3 AM.</p>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-2xl text-muted group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+                <a href="#contact" class="group reveal py-6 grid grid-cols-[40px_1fr_auto] gap-5 items-center hover:px-2 transition-all">
+                    <i class="bx bx-data text-3xl text-accent"></i>
+                    <div>
+                        <h4 class="display font-semibold text-xl text-white mb-1" data-i18n="srv.legacy.title">Legacy Modernization</h4>
+                        <p class="text-muted text-sm leading-relaxed" data-i18n="srv.legacy.desc">Java&nbsp;8&nbsp;→&nbsp;21, WebSphere&nbsp;→&nbsp;Open Liberty, AngularJS&nbsp;→&nbsp;modern Angular, raw JDBC&nbsp;→&nbsp;Hibernate. I make decade-old systems shippable again.</p>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-2xl text-muted group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+                <a href="#contact" class="group reveal py-6 grid grid-cols-[40px_1fr_auto] gap-5 items-center hover:px-2 transition-all">
+                    <i class="bx bx-shield-quarter text-3xl text-accent"></i>
+                    <div>
+                        <h4 class="display font-semibold text-xl text-white mb-1" data-i18n="srv.api.title">API &amp; Security Architecture</h4>
+                        <p class="text-muted text-sm leading-relaxed" data-i18n="srv.api.desc">REST APIs hardened with Spring Security 6, JWT auth, CORS, delegated password management. Eliminate SQL-injection surface and centralize access control.</p>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-2xl text-muted group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+                <a href="#contact" class="group reveal py-6 grid grid-cols-[40px_1fr_auto] gap-5 items-center hover:px-2 transition-all">
+                    <i class="bx bx-bot text-3xl text-accent"></i>
+                    <div>
+                        <h4 class="display font-semibold text-xl text-white mb-1" data-i18n="srv.ai.title">AI / ML &amp; MCP Tooling</h4>
+                        <p class="text-muted text-sm leading-relaxed" data-i18n="srv.ai.desc">Custom MCP servers, internal Skills, and AI-augmented workflows that drop into existing engineering pipelines.</p>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-2xl text-muted group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+                <a href="#contact" class="group reveal py-6 grid grid-cols-[40px_1fr_auto] gap-5 items-center hover:px-2 transition-all">
+                    <i class="bx bx-rocket text-3xl text-accent"></i>
+                    <div>
+                        <h4 class="display font-semibold text-xl text-white mb-1" data-i18n="srv.lead.title">Tech Leadership &amp; Mentoring</h4>
+                        <p class="text-muted text-sm leading-relaxed" data-i18n="srv.lead.desc">Code review, architectural direction, modernization roadmaps. I've led teams through migrations the rest of the org thought impossible.</p>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-2xl text-muted group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="border-t border-ink-700/50 py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="reveal mb-12 md:mb-16 max-w-3xl">
+                <p class="text-accent text-sm mb-4" data-i18n="projects.tag">— Selected work</p>
+                <h2 class="display font-bold text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tightest text-white" data-i18n="projects.title">
+                    Recent projects.
+                </h2>
+            </div>
+
+            <article class="reveal group bg-ink-900 border border-ink-700/60 rounded-2xl overflow-hidden hover:border-accent/40 transition-colors mb-6">
+                <div class="grid md:grid-cols-5 gap-0">
+                    <div class="md:col-span-3 bg-black overflow-hidden border-b md:border-b-0 md:border-r border-ink-700/60 md:h-[360px] flex items-center justify-center">
+                        <img src="vanter.png" alt="Vanter homepage"
+                             class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"/>
+                    </div>
+                    <div class="md:col-span-2 p-8 md:p-10 flex flex-col justify-center">
+                        <span class="mono text-xs text-accent uppercase tracking-widest mb-3" data-i18n="proj.vanter.role">Founder · CEO</span>
+                        <h3 class="display font-bold text-3xl text-white mb-3">Vanter</h3>
+                        <p class="text-muted leading-relaxed mb-6" data-i18n="proj.vanter.desc">
+                            SaaS company building high-performance software and
+                            digital infrastructure. Founded March 2026.
+                        </p>
+                        <a href="https://vanter.net" target="_blank" rel="noopener"
+                           class="inline-flex items-center gap-2 text-white hover:text-accent transition-colors w-fit">
+                            vanter.net <i class="bx bx-right-arrow-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="reveal group bg-ink-900 border border-ink-700/60 rounded-2xl overflow-hidden hover:border-accent/40 transition-colors">
+                <div class="grid md:grid-cols-5 gap-0">
+                    <div class="md:col-span-3 bg-ink-800 overflow-hidden md:h-[280px]">
+                        <img src="accounting.png" alt="Accounting website"
+                             class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"/>
+                    </div>
+                    <div class="md:col-span-2 p-7 md:p-8 flex flex-col justify-center gap-2">
+                        <span class="mono text-xs text-accent uppercase tracking-widest" data-i18n="proj.acc.role">Live · Freelance</span>
+                        <h3 class="display font-bold text-2xl text-white" data-i18n="proj.acc.title">Accounting Website</h3>
+                        <p class="text-muted text-sm leading-relaxed mb-3" data-i18n="proj.acc.desc">
+                            Responsive accounting platform built for Nicaraguan SMEs —
+                            statements, product catalog, and reporting modules.
+                        </p>
+                        <a href="https://contabilidad-nica.netlify.app/" target="_blank" rel="noopener"
+                           class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent hover:text-accent text-white px-5 py-2.5 rounded-md transition-colors text-sm w-fit" data-i18n="proj.acc.cta">
+                            Visit site <i class="bx bx-right-arrow-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- AXIOM SHOWCASE -->
+    <section id="axiom" class="border-t border-ink-700/50 py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 mb-10 reveal">
+                <div class="lg:col-span-5">
+                    <p class="text-accent text-sm mb-4" data-i18n="axiom.tag">— Featured · Vanter</p>
+                    <h2 class="display font-bold text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tightest text-white" data-i18n="axiom.title">
+                        Axiom — School<br>administration<br>at scale.
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 lg:pt-6">
+                    <p class="text-muted text-lg leading-relaxed" data-i18n="axiom.desc">
+                        K-12 institutions juggle attendance, grades, schedules, parent
+                        communications, and tuition across spreadsheets and disconnected tools.
+                        <strong class="text-white font-medium">Axiom</strong> is one platform for
+                        all of it — built by Vanter as our flagship SaaS product.
+                    </p>
+                    <p class="mt-4 mono text-xs text-muted uppercase tracking-widest">
+                        Next.js · TypeScript · PostgreSQL · Tailwind
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-3 reveal">
+                <button type="button" data-axiom-open="0"
+                        class="md:col-span-6 group rounded-2xl overflow-hidden bg-ink-800 border border-ink-700/60 hover:border-accent/50 transition relative">
+                    <img src="axiom-1.png" alt="Axiom — admin dashboard"
+                         class="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700"/>
+                    <span class="absolute bottom-4 left-4 mono text-xs uppercase tracking-widest text-white/80 bg-ink-950/70 backdrop-blur px-3 py-1.5 rounded" data-i18n="axiom.thumb.dashboard">
+                        Admin dashboard
+                    </span>
+                </button>
+
+                <button type="button" data-axiom-open="10"
+                        class="md:col-span-2 group rounded-2xl overflow-hidden bg-ink-800 border border-ink-700/60 hover:border-accent/50 transition relative aspect-[4/3]">
+                    <img src="axiom-11.png" alt="Axiom — attendance heatmap"
+                         class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/>
+                    <span class="absolute bottom-3 left-3 mono text-[10px] uppercase tracking-widest text-white/80 bg-ink-950/70 backdrop-blur px-2.5 py-1 rounded" data-i18n="axiom.thumb.attendance">
+                        Attendance
+                    </span>
+                </button>
+
+                <button type="button" data-axiom-open="8"
+                        class="md:col-span-2 group rounded-2xl overflow-hidden bg-ink-800 border border-ink-700/60 hover:border-accent/50 transition relative aspect-[4/3]">
+                    <img src="axiom-9.png" alt="Axiom — schedule constructor"
+                         class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/>
+                    <span class="absolute bottom-3 left-3 mono text-[10px] uppercase tracking-widest text-white/80 bg-ink-950/70 backdrop-blur px-2.5 py-1 rounded" data-i18n="axiom.thumb.schedule">
+                        Schedule
+                    </span>
+                </button>
+
+                <button type="button" data-axiom-open="9"
+                        class="md:col-span-2 group rounded-2xl overflow-hidden bg-ink-800 border border-ink-700/60 hover:border-accent/50 transition relative aspect-[4/3]">
+                    <img src="axiom-10.png" alt="Axiom — tuition tracking"
+                         class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/>
+                    <span class="absolute bottom-3 left-3 mono text-[10px] uppercase tracking-widest text-white/80 bg-ink-950/70 backdrop-blur px-2.5 py-1 rounded" data-i18n="axiom.thumb.tuition">
+                        Tuition
+                    </span>
+                </button>
+            </div>
+
+            <div class="mt-6 flex justify-center reveal">
+                <button type="button" data-axiom-open="0"
+                        class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent hover:text-accent text-white px-6 py-3 rounded-md transition-colors text-sm" data-i18n="axiom.viewall">
+                    View all 11 screens <i class="bx bx-right-arrow-alt"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-ink-950/95 backdrop-blur-md hidden items-center justify-center p-6"
+         role="dialog" aria-modal="true" aria-label="Axiom screenshot gallery">
+        <button id="lightbox-close" type="button" aria-label="Close gallery"
+                class="absolute top-6 right-6 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-ink-800 border border-ink-600 text-white hover:border-accent hover:text-accent transition">
+            <i class="bx bx-x text-2xl"></i>
+        </button>
+        <button id="lightbox-prev" type="button" aria-label="Previous image"
+                class="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-ink-800 border border-ink-600 text-white hover:border-accent hover:text-accent transition">
+            <i class="bx bx-chevron-left text-2xl"></i>
+        </button>
+        <button id="lightbox-next" type="button" aria-label="Next image"
+                class="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-ink-800 border border-ink-600 text-white hover:border-accent hover:text-accent transition">
+            <i class="bx bx-chevron-right text-2xl"></i>
+        </button>
+        <figure class="max-w-[92vw] max-h-[90vh] flex flex-col items-center gap-4">
+            <img id="lightbox-img" src="" alt=""
+                 class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"/>
+            <figcaption class="flex items-center gap-4 text-sm">
+                <span id="lightbox-caption" class="text-white"></span>
+                <span class="mono text-muted" id="lightbox-counter"></span>
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="border-t border-ink-700/50 py-20 md:py-28">
+        <div class="max-w-3xl mx-auto px-6 md:px-10 text-center reveal">
+            <p class="text-accent text-sm mb-4" data-i18n="contact.tag">— Let's work together</p>
+            <h2 class="display font-bold text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tightest text-white" data-i18n="contact.title">
+                Have a project<br>in mind?
+            </h2>
+            <p class="mt-6 text-muted text-lg leading-relaxed max-w-xl mx-auto" data-i18n="contact.desc">
+                Open to consulting work, founding-engineer roles, and Vanter partnerships.
+                The fastest way to reach me is email.
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-3">
+                <a href="mailto:toenmanuela@gmail.com"
+                   class="inline-flex items-center gap-2 bg-accent hover:bg-accent-soft text-ink-950 font-medium px-6 py-3 rounded-md transition-colors">
+                    <i class="bx bx-envelope"></i> toenmanuela@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/enmanuel-torres-52a45321a/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent hover:text-accent text-white px-6 py-3 rounded-md transition-colors">
+                    <i class="bx bxl-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Snowsita" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent hover:text-accent text-white px-6 py-3 rounded-md transition-colors">
+                    <i class="bx bxl-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="border-t border-ink-700/50 py-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2">
+            <span class="mono text-accent text-lg">*</span>
+            <span class="display font-semibold text-white">Enmanuel Torres</span>
+        </div>
+        <p class="text-muted text-sm" data-i18n="footer.copyright">© 2026 — Built in Matagalpa, Nicaragua.</p>
+        <div class="flex items-center gap-4 text-lg text-muted">
+            <a href="https://github.com/Snowsita" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-accent transition-colors"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/enmanuel-torres-52a45321a/" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-accent transition-colors"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://x.com/SnowDra" target="_blank" rel="noopener" aria-label="X" class="hover:text-accent transition-colors"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/eatorres04" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-accent transition-colors"><i class="bx bxl-instagram"></i></a>
         </div>
     </div>
-    <div class="home-img">
-        <img src="image.png" alt="Enmanuel Torres Profile Picture"></div>
-
-</section>
-
-<section class="about" id="about">
-
-    <div class="about-img">
-        <img src="image.png" alt="About Enmanuel Torres"></div>
-
-    <div class="about-content">
-        <h2 data-key="about-title">About <span>Me</span></h2>
-        <p data-key="about-desc1">I am a Software Engineering Team Lead based in Matagalpa, Nicaragua, with a proven
-            track record of building and guiding high-performing teams to deliver robust enterprise software. My
-            experience covers the full software development lifecycle, from designing cloud-native applications to
-            modernizing legacy systems for enhanced efficiency and security. I am passionate about technical leadership,
-            mentoring, and solving business-critical challenges through innovative technology.</p>
-        <br>
-        <p data-key="about-desc2">
-            My technical foundation is in Java, complemented by expertise in Spring Boot, Angular, and cloud platforms
-            such as AWS and Azure. I have successfully led major technology initiatives, including large-scale
-            migrations and the adoption of modern DevOps practices with Docker and Git. My objective is to leverage my
-            skills to create impactful, sustainable software solutions.
-        </p>
-    </div>
-
-</section>
-
-<section class="services" id="services">
-    <h2 class="heading" data-key="services-title">My <span>Services</span></h2>
-    <div class="services-container">
-
-        <div class="service-box">
-            <div class="service-info">
-                <i class="bx bx-laptop"></i>
-                <h4 data-key="service-fullstack-title">Full-Stack Development</h4>
-                <p data-key="service-fullstack-desc">I deliver end-to-end application development using modern technologies like Java, Spring Boot, Angular, and React. From architecting scalable databases on PostgreSQL or Oracle to building responsive user interfaces, I manage the entire software lifecycle to create cohesive and high-performing enterprise solutions.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <div class="service-info">
-                <i class='bx bx-data'></i>
-                <h4 data-key="service-legacy-title">Legacy System Modernization</h4>
-                <p data-key="service-legacy-desc">I specialize in migrating and upgrading complex legacy systems. My experience includes leading migrations from Java 8 to 21, WebSphere to Open Liberty, and AngularJS to modern Angular versions. I re-architect data access layers, replace outdated patterns like raw JDBC with Hibernate, and refactor code to enhance security and maintainability.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <div class="service-info">
-                <i class='bx bx-server'></i>
-                <h4 data-key="service-devops-title">DevOps & Cloud</h4>
-                <p data-key="service-devops-desc">I manage the full deployment lifecycle for applications using tools like Docker, Jenkins, and Git. My expertise includes achieving high success rates across UAT, QA, and production environments. I am experienced with major cloud providers including AWS, Azure, and Google Cloud, ensuring scalable and resilient infrastructure.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <div class="service-info">
-                <i class='bx bx-shield-quarter'></i>
-                <h4 data-key="service-api-title">API & Security Architecture</h4>
-                <p data-key="service-api-desc">I architect and deliver secure REST APIs using Spring Boot for SaaS platforms. I have deep expertise in implementing enterprise-grade security using Spring Security, designing JWT-based authentication, and eliminating critical vulnerabilities like SQL injection to protect applications and data.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <div class="service-info">
-                <i class='bx bxs-microphone-alt'></i>
-                <h4 data-key="service-interpretation-title">Interpretation Services</h4>
-                <p data-key="service-interpretation-desc">I provide professional real-time interpretation to bridge communication gaps in live settings. As a fully bilingual professional fluent in English and Spanish, I ensure that conversations, meetings, and appointments flow naturally and accurately across sectors like medical and legal.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <div class="service-info">
-                <i class='bx bx-book-content'></i>
-                <h4 data-key="service-translation-title">Translation Services</h4>
-                <p data-key="service-translation-desc">I offer precise and culturally-aware document translation. Specializing in technical, legal, and business content, I ensure your written materials are accurately conveyed in both English and Spanish, maintaining the original tone, context, and meaning.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section class="projects" id="projects">
-    <h2 class="heading" data-key="projects-title">My <span>Projects</span></h2>
-
-    <div class="projects-box">
-
-        <div class="projects-card">
-            <img src="image1.png" alt="Employee Management Application Screenshot">
-            <h3 data-key="project-emp-title">Employee Management API (Angular, Spring, MySQL)</h3>
-            <p data-key="project-emp-desc">A robust Full-Stack Employee Management system designed to streamline HR operations. This
-                project features a secure REST API built with Spring Boot providing CRUD functionalities for employee
-                data, integrated with MySQL for efficient data storage. The frontend, developed with Angular, offers an
-                intuitive user interface for managing employee profiles, roles, and permissions. Key functionalities
-                include unique IDs, secure email management, and custom fields, designed for scalability and
-                maintainability in enterprise environments.</p>
-            <div class="btn"><a href="#contact">Book Demo</a></div>
-        </div>
-
-        <div class="projects-card">
-            <img src="image2.png" alt="Internal Messaging Application Screenshot">
-            <h3 data-key="project-msg-title">Internal Messaging Application (Angular, Spring, Keycloak, PostgresSQL)</h3>
-            <p data-key="project-msg-desc">An internal, custom-built messaging platform tailored for secure business communication. The
-                backend is powered by Spring Boot with PostgreSQL for message storage, ensuring robust and scalable
-                data handling. Keycloak is integrated for enterprise-grade authentication and authorization, providing
-                a secure environment for internal users. The intuitive frontend, developed with Angular, facilitates
-                real-time message exchange, user presence indication, and message history, enhancing team collaboration
-                and communication efficiency.</p>
-            <div class="btn"><a href="#contact">Book Demo</a></div>
-        </div>
-
-        <div class="projects-card">
-            <img src="image3.png" alt="Cash-Cards Application Screenshot">
-            <h3 data-key="project-cash-title">Family Cash-Cards (Angular, Spring, PostgresSQL)</h3>
-            <p data-key="project-cash-desc">A secure cash-card management application designed for family financial tracking and
-                management. This system provides a REST API (Spring Boot) backend connected to PostgreSQL for managing
-                virtual cash cards, enabling users to track savings, deposits, and withdrawals efficiently. The Angular
-                frontend offers a user-friendly interface for managing card balances, transaction history, and
-                allocating funds, promoting better household financial oversight and transparency.</p>
-            <div class="btn"><a href="#contact">Book Demo</a></div>
-        </div>
-
-        <div class="projects-card">
-            <img src="image5.png" alt="Accounting Website Screenshot">
-            <h3 data-key="project-acc-title">Accounting Website (React, Node.js, TypeScript)</h3>
-            <p data-key="project-acc-desc">A responsive accounting website layout designed for optimal user experience across various
-                screen sizes. Implemented using modern React, Node.js, TypeScript (with media queries for
-                adaptability). This project focused on creating a clean, intuitive account statements system and an
-                efficient product display that can handle hundreds of inputs seamlessly.</p>
-            <div class="btn"><a href="https://contabilidad-nica.netlify.app/" target="_blank" rel="noopener">View
-                Website</a></div>
-        </div>
-
-        <div class="projects-card">
-            <img src="image4.png" alt="Encrypted Login Form Screenshot">
-            <h3 data-key="project-login-title">Login System with Password Delegation (Angular, Spring, MySQL)</h3>
-            <p data-key="project-login-desc">A robust and secure user authentication system engineered with Spring Boot (using Spring
-                Security 6.5 best practices) for the backend, integrated with MySQL for user data management. It
-                features advanced password delegation for enhanced security and utilizes JSESSIONIDs for session
-                management. The frontend, built with Angular, provides a seamless and secure login experience,
-                demonstrating strong authentication flows and protection against common web vulnerabilities.</p>
-            <div class="btn"><a href="#contact">Book Demo</a></div>
-        </div>
-
-        <div class="projects-card">
-            <img src="project3.png" alt="Inventory Management System Screenshot">
-            <h3 data-key="project-inv-title">Inventory Management System (React, TypeScript, Vite, PostgresSQL)</h3>
-            <p data-key="project-inv-desc">An interactive inventory management system demonstrating full CRUD (Create, Read, Update,
-                Delete) operations for inventory items. Built with React and TypeScript, leveraging Vite for fast
-                development and hot module reloading. Designed state management to ensure smooth data flow and
-                real-time updates across the application, improving data accuracy by 95% in simulated environments.
-                Focuses on efficient item tracking for small to medium-sized businesses.</p>
-            <div class="btn"><a href="#contact">Book Demo</a></div>
-        </div>
-
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <h2 class="heading" data-key="contact-title">Contact <span>Me</span></h2>
-
-    <form action="" method="POST">
-        <div class="input-group">
-            <div class="input-box">
-                <label>
-                    <input type="text" name="full_name" placeholder="Full name" required>
-                </label>
-                <label>
-                    <input type="email" name="email" placeholder="Email" required>
-                </label>
-            </div>
-            <div class="input-box">
-                <label>
-                    <input type="tel" name="phone_number" placeholder="Phone Number" maxlength="15">
-                </label>
-                <label>
-                    <input type="text" name="subject" placeholder="Subject">
-                </label>
-            </div>
-        </div>
-        <div class="input-group-2">
-            <label for="message"></label><textarea name="message" id="message" placeholder="Your message" cols="30"
-                                                   rows="10" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </div>
-    </form>
-    <div class="contact-info">
-        <p data-key="contact-alt">Alternatively, you can reach me directly:</p>
-        <p data-key="contact-email">Email: snowsita1@gmail.com</p>
-    </div>
-
-</section>
-
-<footer class="footer">
-    <div class="social-icons">
-        <a href="https://github.com/Snowsita" target="_blank" rel="noopener">
-            <i class="bx bxl-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/enmanuel-torres-52a45321a/" target="_blank" rel="noopener">
-            <i class="bx bxl-linkedin-square"></i>
-        </a>
-        <a href="https://www.instagram.com/eatorres04" target="_blank" rel="noopener">
-            <i class="bx bxl-instagram-alt"></i>
-        </a>
-        <a href="https://x.com/SnowDra" target="_blank" rel="noopener">
-            <i class="bx bxl-twitter"></i>
-        </a>
-    </div>
-
-    <ul class="list">
-        <li>
-            <a href="#home">Home</a>
-        </li>
-        <li>
-            <a href="#services">Services</a>
-        </li>
-        <li>
-            <a href="#about">About</a>
-        </li>
-        <li>
-            <a href="#projects">Projects</a>
-        </li>
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-    </ul>
-
-    <p class="copyright" data-key="footer-copy">
-        © Enmanuel Torres | All Rights Reserved
-    </p>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 
